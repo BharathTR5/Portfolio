@@ -109,6 +109,7 @@ header{
 
   .dropdown_menu{
     display: block;
+    z-index: 1;
     /* height: 300px; */
   }
 }
