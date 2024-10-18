@@ -10,6 +10,7 @@ body{
   height: 100vh;
   width: 100%;
   background-color: rgb(24, 34, 35);
+  overflow-x: hidden;
 }
 
 li{
@@ -69,7 +70,6 @@ header{
   display: none;
 }
 
-
 /* Dropdown menu */
 .dropdown_menu{
   display: none;
@@ -79,13 +79,15 @@ header{
   height: 0;
   width: 100%;
   background-color: rgba(14, 21, 30, 0.634);
-  backdrop-filter: blur(10px);
   overflow: hidden;
+  backdrop-filter: blur(15px);
   transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
 }
 
 .dropdown_menu.open{
   height: 300px;
+  animation: dropdown 0.2s ease-in 1 forwards;
 }
 
 .dropdown_menu li{
@@ -109,8 +111,6 @@ header{
 
   .dropdown_menu{
     display: block;
-    z-index: 1;
-    /* height: 300px; */
   }
 }
 
@@ -121,34 +121,45 @@ header{
   .logo::first-letter{
     font-size: 1.7rem;
   }
+  .dropdown_menu.open{
+    z-index: 1000;
+  }
+  .main{
+    z-index: 0;
+  }
 }
 
 /*main section*/
+#section-1{
+  transition: opacity 1s, transform 1s;
+}
+
 #main{
   display: flex;
   justify-content: space-around;
   align-items: center;
   color: white;
+  transition: opacity 1s, transform 3s;
+  opacity: 1;
+  transform: translateY(30px);
 }
 
 #intro p{
   text-align: justify;
-  animation: paragraph 1s ease-in 1s 1 forwards;
   opacity: 1;
 }
 #main{
   display: flex;
 }
+
 #main>img{
   width: 30%;
   height: 30%;
   margin-top: 100px;
   border: 1px solid white;
   border-radius: 10px 200px ;
-  animation: photo 2s ease 0s 1 forwards;
-  opacity: 0;
-  transform: rotateX(45deg) rotateY(45deg);
 }
+
 #main h1{
   font-size: 3rem;
 }
@@ -219,7 +230,9 @@ header{
   margin: 50px 0;
   padding: 50px;
   background-color: hsl(184, 19%, 14%);
-  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2s, transform 2s;
 }
 #about-me-pic{
   height: 30%;
@@ -253,16 +266,14 @@ header{
       }
   } 
 
-
-
-
-
-  
   /* Skills Section */
 
-#skill-conatainer{
+#skill-container{
     color: white;
     text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 2s, transform 3s;
 }
 
 #tech-skills,#soft-skills{
@@ -362,6 +373,9 @@ header{
   padding: 50px 0;
   text-align: justify;
   background-color: hsl(184, 19%, 14%);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 2s, transform 4s;
 }
 .resumeHeading{
   text-align: center;
@@ -613,22 +627,11 @@ footer h1{
   
 }
 
-/* 
+
 @keyframes paragraph {
   0%{
     opacity: 0;
     transform: translateY(-100px);
-  }
-  100%{
-    opacity: 1;
-    transform: translateX(0px);
-  }
-} */
-
-@keyframes photo {
-  0%{
-    opacity: 0;
-    transform: translateX(100px);
   }
   100%{
     opacity: 1;
