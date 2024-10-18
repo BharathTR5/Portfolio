@@ -135,9 +135,6 @@ header{
   justify-content: space-around;
   align-items: center;
   color: white;
-  transition: opacity 1s, transform 3s;
-  opacity: 1;
-  transform: translateY(30px);
 }
 
 #intro p{
