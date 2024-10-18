@@ -130,10 +130,6 @@ header{
 }
 
 /*main section*/
-#section-1{
-  transition: opacity 1s, transform 1s;
-}
-
 #main{
   display: flex;
   justify-content: space-around;
@@ -146,7 +142,6 @@ header{
 
 #intro p{
   text-align: justify;
-  opacity: 1;
 }
 #main{
   display: flex;
@@ -625,16 +620,4 @@ footer h1{
     margin: 30px;
   }
   
-}
-
-
-@keyframes paragraph {
-  0%{
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-  100%{
-    opacity: 1;
-    transform: translateX(0px);
-  }
 }
